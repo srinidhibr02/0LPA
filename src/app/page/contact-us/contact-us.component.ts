@@ -6,7 +6,7 @@ import {FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms'
   styleUrls: ['./contact-us.component.scss']
 })
 export class ContactUsComponent implements OnInit {
-
+  showAlert:boolean = false;
   contactForm!:FormGroup;
 
   constructor(private fb:FormBuilder) { }
@@ -46,5 +46,18 @@ export class ContactUsComponent implements OnInit {
   }
   get agree(){
     return this.contactForm.get('agree');
+  }
+
+  submit(){
+    console.log(this.contactForm.value);
+    setInterval(()=>{
+      this.showAlert = false;
+    }, 3000)
+    this.clearForm();
+    this.showAlert = true;
+  }
+
+  clearForm(){
+    this.contactForm.reset();
   }
 }

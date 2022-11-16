@@ -1,5 +1,11 @@
 <div class="container p-5">
     <span class="display-1 p-4">Write to us...</span>
+    <div class="alert alert-success" role="alert" *ngIf="showAlert">
+        <h4 class="alert-heading">Thank you, we value your feedback</h4>
+        <hr>
+        <p class="mb-0">Please write to us for anything else</p>
+      </div>
+
     <form [formGroup]="contactForm" class="m-4">
         <div class="form-group mt-3 mb-3">
             <label for="name">Name<span class="text-danger">*</span></label>
@@ -8,7 +14,7 @@
             <div class="emailError" *ngIf="name!.invalid && name!.touched">
                 <span class="text-danger">Tell us your Name</span>
             </div>
-          </div>
+        </div>
         <div class="form-group mt-3 mb-3">
             <label for="email">Email address<span class="text-danger">*</span></label>
             <input type="email" class="form-control " id="email" placeholder="name@example.com" formControlName="email">
@@ -17,34 +23,37 @@
                 <span class="text-danger">Your email does not look right</span>
             </div>
 
-          </div>
-          <div class="form-group mt-3 mb-3">
+        </div>
+        <div class="form-group mt-3 mb-3">
             <label for="phone">Phone Number<span class="text-danger">*</span></label>
             <input type="tel" class="form-control" id="phone" formControlName="phno" pattern="[6789][0-9]{9}">
 
             <div class="emailError" *ngIf="phone!.invalid && phone!.touched">
                 <span class="text-danger">Your phone number seems incorrect</span>
             </div>
-          </div>
-          <div class="form-group mt-3 mb-3">
+        </div>
+        <div class="form-group mt-3 mb-3">
             <label for="exampleFormControlTextarea1">Description<span class="text-danger">*</span></label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="message"></textarea>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" formControlName="agree"/>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                formControlName="message"></textarea>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" formControlName="agree" />
             <span class="form-check-label">I confirm to send an email with my message</span>
 
             <div class="emailError" *ngIf="agree!.invalid && agree!.touched">
                 <span class="text-danger">Tick the checkbox</span>
             </div>
-          </div>
-          <div class="row mt-5 mb-5">
+        </div>
+        <div class="row mt-5 mb-5">
             <div class="col">
-                <button type="submit" class="btn btn-success btn-lg col-12" [disabled]="!contactForm.valid">Send email</button>
+                <button (click)="submit()" type="submit" class="btn btn-success btn-lg col-12" [disabled]="!contactForm.valid">
+                    Send email
+                </button>
             </div>
             <div class="col">
-                <button class="btn btn-danger btn-lg col-12">Clear All</button>
+                <button class="btn btn-danger btn-lg col-12" (click)="clearForm()">Clear All</button>
             </div>
-          </div>
+        </div>
     </form>
 </div>
