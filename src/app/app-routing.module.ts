@@ -1,3 +1,4 @@
+import { ContactUsComponent } from './page/contact-us/contact-us.component';
 import { AboutComponent } from './page/about/about.component';
 import { WelcomeComponent } from './page/welcome/welcome.component';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:'about',
     component:AboutComponent
+  },
+  {
+    path:'contact',
+    component:ContactUsComponent
   },
   {
     path:'**',
