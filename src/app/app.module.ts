@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -18,6 +19,7 @@ import { SharedComponents } from './component/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     SharedComponents
   ],
   providers: [],
