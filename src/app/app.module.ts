@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './page/welcome/welcome.component';
 import { AboutComponent } from './page/about/about.component';
+import { HeaderComponent } from './component/header/header.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { ContactUsComponent } from './page/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    AboutComponent
+    AboutComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
