@@ -1,1 +1,15 @@
-/*# sourceMappingURL=welcome.component.css.map */
+.socialIcons {
+  display: flex;
+  justify-content: center;
+}
+.socialIcons .svgIcons {
+  padding: 0px 20px 20px 20px;
+  color: black;
+}
+.socialIcons .svgIcons svg {
+  height: 40px;
+  width: 40px;
+}
+.socialIcons .svgIcons:hover {
+  color: blue;
+}/*# sourceMappingURL=welcome.component.css.map */
