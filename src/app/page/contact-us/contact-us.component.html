@@ -29,7 +29,7 @@
             <input type="tel" class="form-control" id="phone" formControlName="phno" pattern="[6789][0-9]{9}">
 
             <div class="emailError" *ngIf="phone!.invalid && phone!.touched">
-                <span class="text-danger">Your phone number seems incorrect</span>
+                <span class="text-danger">Your phone number seems invalid</span>
             </div>
         </div>
         <div class="form-group mt-3 mb-3">
