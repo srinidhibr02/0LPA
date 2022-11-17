@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms'
+import { MailServiceService } from './mail-service.service';
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
@@ -9,7 +10,10 @@ export class ContactUsComponent implements OnInit {
   showAlert:boolean = false;
   contactForm!:FormGroup;
 
-  constructor(private fb:FormBuilder) { }
+  constructor(
+    private fb:FormBuilder,
+    private mailService:MailServiceService
+    ) { }
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
@@ -48,11 +52,12 @@ export class ContactUsComponent implements OnInit {
     return this.contactForm.get('agree');
   }
 
-  submit(){
-    console.log(this.contactForm.value);
+  async submit(){
+    // console.log(this.contactForm.value);
     setInterval(()=>{
       this.showAlert = false;
-    }, 3000)
+    }, 3000);
+    await this.mailService.storeFeedback(this.contactForm.value);
     this.clearForm();
     this.showAlert = true;
   }

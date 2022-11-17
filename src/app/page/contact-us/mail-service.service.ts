@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-
+import {AngularFirestore} from '@angular/fire/compat/firestore'
 @Injectable({
   providedIn: 'root'
 })
 export class MailServiceService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private firestore:AngularFirestore
+    ) { }
+
+  async storeFeedback(formData:any){
+    console.log(formData);
+    this.firestore.collection('contacts').add(formData);
+  }
 }

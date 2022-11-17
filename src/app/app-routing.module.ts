@@ -3,6 +3,7 @@ import { AboutComponent } from './page/about/about.component';
 import { WelcomeComponent } from './page/welcome/welcome.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductsComponent } from './page/products/products.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:'contact',
     component:ContactUsComponent
+  },
+  {
+    path:'product',
+    component:ProductsComponent
   },
   {
     path:'**',

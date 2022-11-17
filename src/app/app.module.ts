@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,7 +11,7 @@ import { ContactUsComponent } from './page/contact-us/contact-us.component';
 import { SharedComponents } from './component/shared.module';
 import { ProductsComponent } from './page/products/products.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-
+import { AngularFireModule } from '@angular/fire/compat'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     SharedComponents,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
