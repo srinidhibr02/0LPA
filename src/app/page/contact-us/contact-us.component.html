@@ -1,81 +1,95 @@
-<div class="p-5 container mt-4 mb-4">
-    <div class="row">
-        <div class="col">
-            <span class="text-primary display-7 m-5">For any concern</span>
-            <p class="h1 m-5">
-                Contact us through various mode of communication
-            </p>
-            <p class="m-5">
-                We are always here for you, ready to serve, and an aproach way
-            </p>
+<div class="container">
+
+    <section class="contact">
+        <div class="row mt-5">
+            <div class="col-6 offset-1">
+                <img src="../../../assets/undraw_profile_data_re_v81r.svg" class="col-10" />
+            </div>
+            <div class="col-4 hero">
+                <section>
+                    <h1 class="h1 text-danger">
+                        For any concern
+                    </h1>
+                    <p>
+                        We are always here for you, ready to serve, and an aproach way
+                    </p>
+                </section>
+            </div>
         </div>
-        <div class="col offset-2">
-            <img src="../../../assets/contact image.svg" />
+    </section>
+
+
+    <section>
+        <div class="row">
+            <div class="col-6">
+                <h1 class="h1 text-danger text-center">
+                    Write to us...
+                </h1>
+                <div class="alert alert-success" role="alert" *ngIf="showAlert">
+                    <h4 class="alert-heading">Thank you, we value your feedback</h4>
+                    <hr>
+                    <p class="mb-0">Please write to us for anything else</p>
+                </div>
+
+                <section class="form">
+                    <form [formGroup]="contactForm" class="mt-5">
+                        <div class="form-group mt-3 mb-3">
+                            <label for="name">Name<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="name" formControlName="name">
+
+                            <div class="emailError" *ngIf="name!.invalid && name!.touched">
+                                <span class="text-danger">Tell us your Name</span>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3 mb-3">
+                            <label for="email">Email address<span class="text-danger">*</span></label>
+                            <input type="email" class="form-control " id="email" placeholder="name@example.com"
+                                formControlName="email">
+
+                            <div class="emailError" *ngIf="email!.invalid && email!.touched">
+                                <span class="text-danger">Your email does not look right</span>
+                            </div>
+
+                        </div>
+                        <div class="form-group mt-3 mb-3">
+                            <label for="phone">Phone Number<span class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" id="phone" formControlName="phno"
+                                pattern="[6789][0-9]{9}">
+
+                            <div class="emailError" *ngIf="phone!.invalid && phone!.touched">
+                                <span class="text-danger">Your phone number seems invalid</span>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3 mb-3">
+                            <label for="exampleFormControlTextarea1">Description<span
+                                    class="text-danger">*</span></label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                formControlName="message"></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" formControlName="agree" />
+                            <span class="form-check-label">I confirm to send an email with my message</span>
+
+                            <div class="emailError" *ngIf="agree!.invalid && agree!.touched">
+                                <span class="text-danger">Tick the checkbox</span>
+                            </div>
+                        </div>
+                        <div class="row mt-5 mb-5">
+                            <div class="col">
+                                <button (click)="submit()" type="submit" class="btn btn-success btn-lg col-12"
+                                    [disabled]="!contactForm.valid">
+                                    Send email
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-danger btn-lg col-12" (click)="clearForm()">Clear All</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <div class="col-5 offset-1">
+                <img src="../../../assets/undraw_publish_article_re_3x8h.svg" class="col-10" />
+            </div>
         </div>
-    </div>
-    <span class="h1 p-4 offset-4 col-4">Write to us...</span>
-    <div class="alert alert-success" role="alert" *ngIf="showAlert">
-        <h4 class="alert-heading">Thank you, we value your feedback</h4>
-        <hr>
-        <p class="mb-0">Please write to us for anything else</p>
-    </div>
-    <div class="row">
-        <div class="col">
-            <form [formGroup]="contactForm" class="mt-5">
-                <div class="form-group mt-3 mb-3">
-                    <label for="name">Name<span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="name" formControlName="name">
-
-                    <div class="emailError" *ngIf="name!.invalid && name!.touched">
-                        <span class="text-danger">Tell us your Name</span>
-                    </div>
-                </div>
-                <div class="form-group mt-3 mb-3">
-                    <label for="email">Email address<span class="text-danger">*</span></label>
-                    <input type="email" class="form-control " id="email" placeholder="name@example.com"
-                        formControlName="email">
-
-                    <div class="emailError" *ngIf="email!.invalid && email!.touched">
-                        <span class="text-danger">Your email does not look right</span>
-                    </div>
-
-                </div>
-                <div class="form-group mt-3 mb-3">
-                    <label for="phone">Phone Number<span class="text-danger">*</span></label>
-                    <input type="tel" class="form-control" id="phone" formControlName="phno" pattern="[6789][0-9]{9}">
-
-                    <div class="emailError" *ngIf="phone!.invalid && phone!.touched">
-                        <span class="text-danger">Your phone number seems invalid</span>
-                    </div>
-                </div>
-                <div class="form-group mt-3 mb-3">
-                    <label for="exampleFormControlTextarea1">Description<span class="text-danger">*</span></label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                        formControlName="message"></textarea>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" formControlName="agree" />
-                    <span class="form-check-label">I confirm to send an email with my message</span>
-
-                    <div class="emailError" *ngIf="agree!.invalid && agree!.touched">
-                        <span class="text-danger">Tick the checkbox</span>
-                    </div>
-                </div>
-                <div class="row mt-5 mb-5">
-                    <div class="col">
-                        <button (click)="submit()" type="submit" class="btn btn-success btn-lg col-12"
-                            [disabled]="!contactForm.valid">
-                            Send email
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button class="btn btn-danger btn-lg col-12" (click)="clearForm()">Clear All</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="col offset-2">
-            <img src="../../../assets/contactform.png">
-        </div>
-    </div>
-</div>
+    </section>

@@ -1,15 +1,32 @@
+.home {
+  margin: auto;
+  margin-top: 50px;
+  height: 70vh;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+}
+
 .socialIcons {
   display: flex;
   justify-content: center;
 }
 .socialIcons .svgIcons {
   padding: 0px 20px 20px 20px;
-  color: black;
+  color: rgb(254, 254, 254);
 }
 .socialIcons .svgIcons svg {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
 }
 .socialIcons .svgIcons:hover {
-  color: blue;
+  color: #1f1fd1;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }/*# sourceMappingURL=welcome.component.css.map */
