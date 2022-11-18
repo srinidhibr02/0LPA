@@ -1,18 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="ms-5 m-2 p-2 navbar-brand" href="#">
-        <img src="../../../assets/logoOnly0LPA.png" class="logoImage d-inline-block align-top" alt="0-LPA" width="50"
-            height="50" />
+<nav class="navbar navbar-expand-sm navbar-muted bg-muted border rounded">
+  <div class="container">
+    <a routerLink="/" class="navbar-brand">
+      <img src="../../../assets/logoOnly0LPA.png" height="50px" alt="Zero" />
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+      (click)="collapsed = !this.collapsed">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end me-5" id="navbarNavAltMarkup">
-        <div class="navbar-nav jumbotron">
-          <a class="nav-item nav-link" routerLink="/">Home</a>
-          <a class="nav-item nav-link" routerLink='/about'>About</a>
-          <a class="nav-item nav-link" routerLink="/product">Products</a>
-          <a class="nav-item nav-link" routerLink="/contact">Contact us</a>
-        </div>
-      </div>
+    <div id="navbarSupportedContent" [ngClass]="{ collapse: collapsed, 'navbar-collapse': true }">
+      <ul class="navbar-nav ms-auto me-4">
+        <li class="nav-item">
+          <a routerLink="/welcome" class="nav-link" routerLinkActive="active"> Home </a>
+        </li>
+        <li class="nav-item" >
+          <a routerLink="/about" class="nav-link" routerLinkActive="active"> About </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/product" class="nav-link" routerLinkActive="active"> Products </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/contact" class="nav-link" routerLinkActive="active"> Contact</a>
+        </li>
+      </ul>
+      <button class="btn" routerLink="/contact">Get Started</button>
+    </div>
+  </div>
 </nav>
