@@ -1,1 +1,10 @@
-/*# sourceMappingURL=contact-us.component.css.map */
+.hero {
+  display: flex;
+  align-items: center;
+}
+
+.contact {
+  margin: auto;
+  margin-top: 50px;
+  height: 70vh;
+}/*# sourceMappingURL=contact-us.component.css.map */
