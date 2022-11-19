@@ -11,6 +11,7 @@ export class MailServiceService {
 
   async storeFeedback(formData:any){
     console.log(formData);
-    this.firestore.collection('contacts').add(formData);
+    Object.assign(formData,{'dateTime':new Date()})
+    this.firestore.collection('ContactForm').add(formData);
   }
 }

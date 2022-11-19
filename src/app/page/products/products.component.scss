@@ -1,0 +1,21 @@
+.hero {
+    display: flex;
+    align-items: center;
+}
+
+.product {
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    // border: 1px solid black;
+    height: 70vh;
+}
+
+.card-image {
+    display: flex;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+}
