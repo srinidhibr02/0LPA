@@ -7,6 +7,7 @@ import Typed from 'typed.js';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  strings:Array<string>;
   products:Array<Object> = [
     {
       name:'Bellwoods',
@@ -30,17 +31,10 @@ export class ProductsComponent implements OnInit {
     }
   ];
   
-  constructor() { }
+  constructor() {
+    this.strings = ['E-Commerce and Retail.', 'Finance and Banking.', 'Recruitment and HR.', 'Education and Learning.', 'Health and Fitness.']
+  }
 
   ngOnInit(): void {
-    const options = {
-      strings: ['E-Commerce and Retail.', 'Finance and Banking.', 'Recruitment and HR.', 'Education and Learning.', 'Health and Fitness.'],
-      typeSpeed: 100,
-      backSpeed:100,
-      showCursor: true,
-      cursorChar: '|',
-      loop: true
-    }
-    const typed = new Typed('.changingText',options);
   }
 }
