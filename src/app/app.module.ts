@@ -11,7 +11,8 @@ import { ContactUsComponent } from './page/contact-us/contact-us.component';
 import { SharedComponents } from './component/shared.module';
 import { ProductsComponent } from './page/products/products.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireModule } from '@angular/fire/compat';
+import { TypedDirective } from './directives/typeEffect/typed.directive'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { AngularFireModule } from '@angular/fire/compat'
     AboutComponent,
     ContactUsComponent,
     ProductsComponent,
+    TypedDirective,
   ],
   imports: [
     BrowserModule,
