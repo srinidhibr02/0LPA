@@ -1,29 +1,25 @@
 <div class="container">
-
     <section class="contact">
-        <div class="row mt-5">
-            <div class="col-6 offset-1">
-                <img src="../../../assets/undraw_profile_data_re_v81r.svg" class="col-10" />
-            </div>
-            <div class="col-4 hero">
-                <section>
-                    <h1 class="h1 text-danger">
-                        For any concern
+        <div class="row mt-2 m-auto">
+            <div class="col-xs-8 col-sm-8 col-md-5 col-lg-5 hero">
+                    <h1 class="text-danger text-sm-center text-md-start text-lg-start">
+                        Lets Connect
                     </h1>
-                    <p>
-                        We are always here for you, ready to serve, and an aproach way
+                    <p class="text-md-start text-lg-start text-sm-center">
+                        Are you ready to build something remarkable and drive your digital growth?
+                    <br/>We'd love to hear from you.
                     </p>
-                </section>
+            </div>
+            <div class="col-md-5 col-lg-5 col-xs-12 col-sm-12">
+                <img src="../../../assets/undraw_profile_data_re_v81r.svg" class="col-8 offset-2" />
             </div>
         </div>
     </section>
-
-
-    <section>
-        <div class="row">
-            <div class="col-6">
-                <h1 class="h1 text-danger text-center">
-                    Write to us...
+    <section class="contact">
+        <div class="row mt-2 m-auto">
+            <div class="offset-md-1 offset-lg-1 col-xs-8 col-sm-8 col-md-5 col-lg-5">
+                <h1 class="h1 text-danger">
+                    Get in touch
                 </h1>
                 <div class="alert alert-success" role="alert" *ngIf="showAlert">
                     <h4 class="alert-heading">Thank you, we value your feedback</h4>
@@ -74,11 +70,11 @@
                                 <span class="text-danger">Tick the checkbox</span>
                             </div>
                         </div>
-                        <div class="row mt-5 mb-5">
+                        <div class="row mt-5 mb-5 m-auto">
                             <div class="col">
                                 <button (click)="submit()" type="submit" class="btn btn-success btn-lg col-12"
                                     [disabled]="!contactForm.valid">
-                                    Send email
+                                    Send Message
                                 </button>
                             </div>
                             <div class="col">
@@ -88,8 +84,9 @@
                     </form>
                 </section>
             </div>
-            <div class="col-5 offset-1">
-                <img src="../../../assets/undraw_publish_article_re_3x8h.svg" class="col-10" />
+            <div class="col-md-5 col-lg-5 col-xs-12 col-sm-12 m-auto">
+                <img src="../../../assets/undraw_publish_article_re_3x8h.svg" class="col-12" />
             </div>
         </div>
     </section>
+</div>
