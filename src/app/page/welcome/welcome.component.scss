@@ -1,12 +1,14 @@
+// *{
+//     border: 1px solid black;
+// }
 .home{
-    margin: auto;
     margin-top: 50px;
-    // border: 1px solid black;
-    height: 70vh;
+    height: max-content;
 }
 .hero{
-    display: flex;
-    align-items: center;
+    display: block;
+    margin: auto;
+    text-align: center;
 }
 
 .socialIcons {
@@ -14,7 +16,7 @@
     justify-content: center;
     .svgIcons {
         padding: 0px 20px 20px 20px;
-        color: rgb(254, 254, 254);
+        color: rgb(0, 0, 0);
         svg {
             height: 30px;
             width: 30px;

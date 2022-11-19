@@ -1,8 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 *{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    // border: 1px solid black;
+    // overflow: hidden;
 }
 .active{
     font-size: 18px !important;
     color: #0b5897 !important;
+}
+.app-root{
+    overflow: hidden;
 }
