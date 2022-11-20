@@ -1,7 +1,18 @@
 <nav class="navbar navbar-expand-md navbar-muted bg-muted border rounded">
   <div class="container">
     <a routerLink="/" class="navbar-brand">
-      <img src="../../../assets/logoOnly0LPA.png" height="50px" alt="Zero" />
+      <div *ngIf="home.isActive">
+        <img src="../../../assets/logoOnly0LPA.png" height="50px" alt="Zero" />
+      </div>
+      <div *ngIf="about.isActive">
+        <img src="../../../assets/Green-Zero.png" height="50px" alt="Zero" />
+      </div>
+      <div *ngIf="product.isActive">
+        <img src="../../../assets/Yellow-Zero.png" height="50px" alt="Zero" />
+      </div>
+      <div *ngIf="contact.isActive">
+        <img src="../../../assets/Red-Zero.png" height="50px" alt="Zero" />
+      </div>
     </a>
     <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
@@ -11,19 +22,22 @@
     <div id="navbarSupportedContent" [ngClass]="{ collapse: collapsed, 'navbar-collapse': true }">
       <ul class="navbar-nav ms-auto me-4">
         <li class="nav-item">
-          <a routerLink="/welcome" class="nav-link" routerLinkActive="active"> Home </a>
+          <a routerLink="/welcome" class="nav-link" routerLinkActive="homeActive" #home="routerLinkActive"> Home </a>
         </li>
         <li class="nav-item" >
-          <a routerLink="/about" class="nav-link" routerLinkActive="active"> About </a>
+          <a routerLink="/about" class="nav-link" routerLinkActive="aboutActive" #about="routerLinkActive"> About </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/product" class="nav-link" routerLinkActive="active"> Products </a>
+          <a routerLink="/product" class="nav-link" routerLinkActive="productActive" #product="routerLinkActive"> Products </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/contact" class="nav-link" routerLinkActive="active"> Contact</a>
+          <a routerLink="/contact" class="nav-link" routerLinkActive="contactActive" #contact="routerLinkActive"> Contact</a>
         </li>
       </ul>
-      <button class="btn" routerLink="/contact">Get Started</button>
+      <button class="btn btn-outline-primary" routerLink="/contact" *ngIf="home.isActive">Get Started</button>
+      <button class="btn btn-outline-success" routerLink="/contact" *ngIf="about.isActive">Get Started</button>
+      <button class="btn btn-outline-warning" routerLink="/contact" *ngIf="product.isActive">Get Started</button>
+      <button class="btn btn-outline-danger" routerLink="/contact" *ngIf="contact.isActive">Get Started</button>
     </div>
   </div>
 </nav>

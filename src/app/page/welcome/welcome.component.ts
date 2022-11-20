@@ -11,6 +11,8 @@ export class WelcomeComponent implements OnInit {
     this.strings = ['Innovate.', 'Grow.', 'Design.', 'Learn.', 'Build.', 'Create.'];
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    window.scrollTo(0,0);
+  }
 
 }

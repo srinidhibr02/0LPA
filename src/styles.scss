@@ -4,9 +4,21 @@
     // border: 1px solid black;
     // overflow: hidden;
 }
-.active{
+.homeActive{
     font-size: 18px !important;
     color: #0b5897 !important;
+}
+.aboutActive{
+    font-size: 18px !important;
+    color: #18d018 !important;
+}
+.productActive{
+    font-size: 18px !important;
+    color: #ffff00 !important;
+}
+.contactActive{
+    font-size: 18px !important;
+    color: #ff0000 !important;
 }
 .app-root{
     overflow: hidden;
