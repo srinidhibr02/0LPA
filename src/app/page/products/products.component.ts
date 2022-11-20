@@ -36,5 +36,6 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0,0);
   }
 }

@@ -16,6 +16,7 @@ export class ContactUsComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0,0);
     this.contactForm = this.fb.group({
       name:['',[
         Validators.required,
